@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><center>Language Identifire</center></title>
+</head>
+<body>
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card With Hover Effect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        }
+        body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: linear-gradient(3deg, rgb(249, 144, 110),rgb(225, 14, 225));
+        }
+        .card{
+        width: 250px;
+        height: 300px;
+        position: relative;
+        cursor: pointer;
+        }
+    
+
+        .card .content{
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.089);
+        backdrop-filter: blur(20px);
+        border: 1px solid white;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.055);
+        transition: all .4s;
+        }
+        .card .content p{
+        font-size: 0.8em;
+        padding: 0.3em 1.5em;
+        text-align: center;
+        }
+        .card:hover .content{
+        color: rgb(36, 36, 36);
+        }
+        .card::before,
+        .card::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        background: #7F00FF;
+        z-index: -20;
+        transition: all .4s;
+        }
+        .card::before{
+        top: 0;
+        right: 0;
+        }
+        .card::after{
+        bottom: 0;
+        left: 0;
+        background: #E100FF;
+        }
+        .card:hover::before{
+        width: 50px;
+        height: 50px;
+        transform: translate(20px, -20px);
+        border-radius: 50%;
+        }
+        .card:hover::after{
+        width: 100px;
+        height: 100px;
+        transform: translate(-20px, 20px);
+        border-radius: 50%;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.card {
+    width: 250px;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card .content {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.089);
+    backdrop-filter: blur(20px);
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.055);
+    transition: all .4s;
+}
+.content h1{
+    color:red;
+}
+.card .content p {
+    font-size: 0.8em;
+    padding: 0.3em 1.5em;
+    text-align: center;
+}
+
+.card:hover .content {
+    color: rgb(36, 36, 36);
+}
+
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: #7F00FF;
+    z-index: -20;
+    transition: all .4s;
+}
+
+.card::before {
+    top: 0;
+    right: 0;
+}
+
+.card::after {
+    bottom: 0;
+    left: 0;
+    background: #E100FF;
+}
+
+.card:hover::before {
+    width: 50px;
+    height: 50px;
+    transform: translate(20px, -20px);
+    border-radius: 50%;
+}
+
+.card:hover::after {
+    width: 100px;
+    height: 100px;
+    transform: translate(-20px, 20px);
+    border-radius: 50%;
+}
+ h1{
+color:white;
+
+}
+.langy{
+font-size:34px;
+}
+{% comment %} text-shadow: 1px 1px 2px black, 0 0 10px black , 0 0 5px black; {% endcomment %}
+
+{% comment %} /*buttom css*/ {% endcomment %}
+
+.bn632-hover {
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  
+    .bn632-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    }
+
+    .bn632-hover:focus {
+    outline: none;
+    }
+
+    .bn632-hover.bn24 {
+    background-image: linear-gradient(
+        to right,
+        #6253e1,
+        #852d91,
+        #a3a1ff,
+        #f24645
+    );
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+    }
+    </style>
+    </head>
+
+
+    <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card">
+    <div class="content">
+    <div class="langy">
+        <p>Language Identified</p>
+    </div>
+    {% comment %} <header><h1 ><center >Language Indentifier</h1><header></center> {% endcomment %}
+        <br>
+    <center><h2 style="color:white" >{{result}} </h2></center>
+    </div>
+    </div>
+
+
+    <a href="http://127.0.0.1:8000/predictor"><button class="bn632-hover bn24">Home</button></a>
+
+    </body>
+    </html>
+</body>
+</html>

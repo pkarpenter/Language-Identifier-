@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Identifire</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 0 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    margin-right: auto; /* Moves logo to the left side */
+  }
+  
+  .logo img {
+    height: 70px; /* Adjust height as needed */
+    width: 70px; /* Maintains image aspect ratio */
+  }
+  
+  /* .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+  } */
+  
+  /* .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+  } */
+  
+  /* Your existing CSS styles (replace with your actual styles) */
+  
+  .neon-link {
+    display: inline-block; /* Allow text wrapping within the link */
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: transparent; /* Transparent background for neon effect */
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove default underline */
+    font-family: sans-serif;
+    font-weight: bold;
+    /* Remove text-transform: uppercase; for lowercase text */
+    position: relative; /* Required for the inner glow effect */
+  }
+  
+  .neon-link:after {
+    content: '';
+    position: absolute;
+    z-index: -1; /* Place the inner glow behind the text */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit; /* Inherit border-radius from the link */
+    background: linear-gradient(to right, #9f3fff 0%, #007bff 50%, #9f3fff 100%); /* Inner neon glow gradient */
+    animation: neon-glow 1.5s ease-in-out infinite alternate; /* Animate the inner glow */
+  }
+  
+  .neon-link:hover {
+    color: #fff; /* Maintain white text color on hover */
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff; /* Outer neon glow effect on hover */
+  }
+  
+  @keyframes neon-glow {
+    from {
+      opacity: 0.7;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-links a:hover {
+    color: #EE1A1A;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .nav-links a:hover {
+    border-bottom: 2px solid white;
+  }
+  
+  /* Styles for the main container with background image */
+  
+  main {
+    padding: 50px 0; /* Adjust padding as needed */
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    padding: 30px; /* Add some padding for better content spacing */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  h1 {
+    font-size: 2.5em; /* Adjust font size for heading */
+    margin-bottom: 20px; /* Add some space after the heading */
+  }
+  
+  .input-box {
+    margin-bottom: 30px; /* Space between input box and button */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold; /* Make label text bolder */
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Add a border for the textarea */
+    border-radius: 5px; /* Rounded corners for the textarea */
+    resize: vertical; /* Allow users to resize the textarea vertically */
+  }
+  
+  button {
+    background-color: #4CAF50; /* Green color for the button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto; /* Center the button horizontally */
+    border-radius: 5px; /* Rounded corners for the button */
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  #outputBox {
+    display: none; /* Initially hide the output box */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px; /* Add space between button and output */
+    background-color: #f5f5f5; /* Light gray background for output */
+  }
+  
+  .footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px; /* Set the desired height */
+  }
+  
+  .footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  
+
+</style>
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body>
+  {% load static %}
+ <h1><center>Language Identifier</center></h1><hr>
+
+ <header>
+  <nav>
+    <div class="logo">
+      <img src="{% static "/img/Logo.png" %}" alt="logo">
+      
+    </div>
+    <ul class="nav-links">
+     <li><a href="https://maps.app.goo.gl/E47rngLKB89FazDQ9" class="neon-link">Location</a></li>
+
+      {% comment %} <li><a href="http://127.0.0.1:8000/predictor" class="neon-link">Home</a></li> {% endcomment %}
+      <li><a href="{% url 'about' %}" class="neon-link">About</a></li>
+      <li><a href="{% url 'Services' %}" class="neon-link">Services</a></li>
+      <li><a href="{% url 'Contect' %}" class="neon-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+
+
+<main style="background-image: url('E:\Li File - Final Hai\image\Hello_image.jpeg'); background-repeat: no-repeat; background-size: cover;">
+  <div class="container">
+    <h1>Language Identifier</h1>
+    <div class="input-box">
+      
+
+      <form action ="{% url 'result' %}" method = 'POST'>
+        {% csrf_token %}
+        <textarea name="data" id="textInput" rows="15" cols="50" placeholder="Type or paste text here..."></textarea>
+      <button type="submit">Submit</button>
+     </form>
+
+
+
+      
+    </div>
+    <div id="outputBox">
+      <p id="result"></p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>&copy; Language Identifier Minor Project.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</body>
+</html>
